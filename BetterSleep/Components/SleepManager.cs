@@ -81,12 +81,12 @@ namespace BetterSleep.Components
 
 			if (_isSelectingTime)
 			{
-				GUIExtensions.DrawOutline(new Rect((BetterSleep.screenWidth / 2) - 200f, BetterSleep.screenHeight * 0.2f, 400, 30), $"Select wake up time\nCurrent time: {_clockController.GetTimeString(BetterSleep.twelveHourFormat, mainscript.M.napszak.currentTime)}\n\n{_clockController.GetTimeString(BetterSleep.twelveHourFormat)}", _statusStyle, Color.black);
+				GUIExtensions.DrawOutline(new Rect((BetterSleep.screenWidth / 2) - 200f, BetterSleep.screenHeight * 0.2f, 400, 30), $"Select wake up time\nCurrent time: {TimeUtilities.GetTimeString(mainscript.M.napszak.currentTime)}\n\n{_clockController.GetTimeString()}", _statusStyle, Color.black);
 				GUIExtensions.DrawOutline(new Rect((BetterSleep.screenWidth / 2) - 200f, BetterSleep.screenHeight * 0.8f, 400, 30), "Scroll wheel or up and down arrow keys to change time\nEnter to select", _statusStyle, Color.black);
 			}
 			else if (BetterSleep.debug)
 			{
-				GUIExtensions.DrawOutline(new Rect(5, 20, 400, 30), _clockController.GetTimeString(BetterSleep.twelveHourFormat, mainscript.M.napszak.currentTime), _statusStyle, Color.black);
+				GUIExtensions.DrawOutline(new Rect(5, 20, 400, 30), TimeUtilities.GetTimeString(mainscript.M.napszak.currentTime), _statusStyle, Color.black);
 				GUIExtensions.DrawOutline(new Rect(5, 50, 400, 30), $"Tiredness: {_tiredness * 100f:F3}%", _statusStyle, Color.black);
 				float timeAwake = mainscript.M.napszak.t - _lastSleepTime;
 				if (timeAwake < 0f)

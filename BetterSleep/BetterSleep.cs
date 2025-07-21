@@ -40,8 +40,8 @@ namespace BetterSleep
 
 		public override void OnLoad()
 		{
-			GameObject sleepManager = new GameObject("SleepManager");
-			_sleepManager = sleepManager.AddComponent<SleepManager>();
+			GameObject controller = new GameObject("BetterSleep");
+			_sleepManager = controller.AddComponent<SleepManager>();
 		}
 
 		public override void Update()
